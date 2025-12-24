@@ -1,11 +1,15 @@
-import prisma from "@/lib/db";
+import { requireAuth } from "@/lib/auth-utils";
+import { LogoutButton } from "./logout";
 
 const Page = async () => {
-  const users = await prisma.user.findMany();
+  await requireAuth();
 
   return (
-    <div className="min-h-screen min-w-screen flex items-center justify-center">
-      {JSON.stringify(users)}
+    <div>
+      <div className="min-h-screen min-w-screen flex items-center justify-center">
+        protected server component
+      </div>
+      <LogoutButton />
     </div>
   );
 };
