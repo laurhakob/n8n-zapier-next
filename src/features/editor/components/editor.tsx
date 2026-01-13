@@ -22,8 +22,8 @@ import {
  import '@xyflow/react/dist/style.css';
  import { nodeComponents } from '@/config/node-components';
  import { AddNodeButton } from './add-node-button';
-// import { useSetAtom } from 'jotai';
-// import { editorAtom } from '../store/atoms';
+ import { useSetAtom } from 'jotai';
+ import { editorAtom } from '../store/atoms';
 // import { NodeType } from '@/generated/prisma/client';
 // import { ExecuteWorkflowButton } from './execute-workflow-button';
 
@@ -40,7 +40,7 @@ export const EditorError = () => {
     data: workflow
   } = useSuspenseWorkflow(workflowId);
 
-//   const setEditor = useSetAtom(editorAtom);
+   const setEditor = useSetAtom(editorAtom);
 
   const [nodes, setNodes] = useState<Node[]>(workflow.nodes);
   const [edges, setEdges] = useState<Edge[]>(workflow.edges);
@@ -74,13 +74,13 @@ export const EditorError = () => {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
          nodeTypes={nodeComponents}
-        // onInit={setEditor}
+         onInit={setEditor}
         fitView
-        // snapGrid={[10, 10]}
-        // snapToGrid
-        // panOnScroll
-        // panOnDrag={false}
-        // selectionOnDrag
+        snapGrid={[10, 10]}
+        snapToGrid
+        panOnScroll
+        panOnDrag={false}
+        selectionOnDrag
       >
         <Background />
         <Controls />
