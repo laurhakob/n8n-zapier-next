@@ -24,8 +24,8 @@ import {
  import { AddNodeButton } from './add-node-button';
  import { useSetAtom } from 'jotai';
  import { editorAtom } from '../store/atoms';
-// import { NodeType } from '@/generated/prisma/client';
-// import { ExecuteWorkflowButton } from './execute-workflow-button';
+import { NodeType } from '@/types/node';
+ import { ExecuteWorkflowButton } from './execute-workflow-button';
 
 export const EditorLoading = () => {
   return <LoadingView message="Loading editor..." />;
@@ -58,9 +58,9 @@ export const EditorError = () => {
     [],
   );
 
-  // const hasManualTrigger = useMemo(() => {
-  //   return nodes.some((node) => node.type === NodeType.MANUAL_TRIGGER);
-  // }, [nodes]);
+  const hasManualTrigger = useMemo(() => {
+    return nodes.some((node) => node.type === NodeType.MANUAL_TRIGGER);
+  }, [nodes]);
 
 
 
@@ -88,11 +88,11 @@ export const EditorError = () => {
         <Panel position="top-right">
           <AddNodeButton />
         </Panel>
-        {/* {hasManualTrigger && (
+        {hasManualTrigger && (
           <Panel position="bottom-center">
             <ExecuteWorkflowButton workflowId={workflowId} />
           </Panel>
-        )} */}
+        )}
       </ReactFlow>
     </div>
   );
