@@ -12,8 +12,8 @@ import { googleFormTriggerChannel } from "./channels/google-form-trigger";
  import { geminiChannel } from "./channels/gemini";
  import { openAiChannel } from "./channels/openai";
  import { anthropicChannel } from "./channels/anthropic";
-// import { discordChannel } from "./channels/discord";
-// import { slackChannel } from "./channels/slack";
+ import { discordChannel } from "./channels/discord";
+ import { slackChannel } from "./channels/slack";
 
  export const executeWorkflow = inngest.createFunction(
    {
@@ -40,8 +40,8 @@ import { googleFormTriggerChannel } from "./channels/google-form-trigger";
        geminiChannel(),
       openAiChannel(),
       anthropicChannel(),
-//       discordChannel(),
-//       slackChannel(),
+      discordChannel(),
+      slackChannel(),
    ],
    },
   async ({ event, step, publish }) => {

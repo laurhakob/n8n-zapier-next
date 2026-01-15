@@ -8,8 +8,8 @@ export enum NodeType {
   ANTHROPIC = "ANTHROPIC",
   GEMINI = "GEMINI",
   OPENAI = "OPENAI",
-  // DISCORD = "DISCORD",
-  // SLACK = "SLACK",
+  DISCORD = "DISCORD",
+  SLACK = "SLACK",
 }
 
 

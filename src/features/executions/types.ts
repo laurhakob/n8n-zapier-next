@@ -1,4 +1,4 @@
- import type { Realtime } from "@inngest/realtime";
+import type { Realtime } from "@inngest/realtime";
 import type { GetStepTools, Inngest } from "inngest";
 
 export type WorkflowContext = Record<string, unknown>;
