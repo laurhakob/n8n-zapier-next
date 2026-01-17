@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout /t 10)",
+      "Bash(ping:*)",
+      "WebFetch(domain:localhost)",
+      "Bash(curl:*)",
+      "Bash(npm run build:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(dir /S \"C:\\\\Users\\\\Ando\\\\OneDrive\\\\Desktop\\\\n8n-zapier-next\\\\src\\\\app\\\\\\(dashboard\\)\\\\\\(editor\\)\"\")",
+      "Bash(dir /S \"C:\\\\Users\\\\Ando\\\\OneDrive\\\\Desktop\\\\n8n-zapier-next\\\\src\\\\app\\\\\\(dashboard\\)\\\\\\(rest\\)\"\")",
+      "Bash(powershell -Command:*)",
+      "Bash(stat:*)",
+      "Bash(if [ -d \".next\" ])",
+      "Bash(then rm -rf .next)",
+      "Bash(else echo \".next directory does not exist\")",
+      "Bash(fi)",
+      "Bash(cmd //c \"rd /s /q .next\")",
+      "Bash(npm run dev:*)",
+      "Bash(next build)",
+      "Bash(tee:*)"
+    ]
+  }
+}
