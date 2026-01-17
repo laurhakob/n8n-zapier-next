@@ -18,7 +18,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { useSuspenseExecution } from "@/features/executions/hooks/use-executions";
-import { ExecutionStatus } from "@/types/node";
+import { ExecutionStatus } from "@/generated/prisma";
 
 const getStatusIcon = (status: ExecutionStatus) => {
   switch (status) {

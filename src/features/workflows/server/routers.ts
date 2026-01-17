@@ -8,9 +8,9 @@
  import { createTRPCRouter, premiumProcedure, protectedProcedure } from "@/trpc/init";
  import z from "zod";
  import { PAGINATION } from "@/config/constants";
-import { NodeType } from "@/types/node";
 // import { inngest } from "@/inngest/client";
  import { sendWorkflowExecution } from "@/inngest/utils";
+import { NodeType } from "@/generated/prisma";
 
 export const workflowsRouter = createTRPCRouter({
   execute: protectedProcedure

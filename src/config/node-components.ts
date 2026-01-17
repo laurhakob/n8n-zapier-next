@@ -10,7 +10,7 @@ import { OpenAiNode } from "@/features/executions/components/openai/node";
 import { AnthropicNode } from "@/features/executions/components/anthropic/node";
 import { DiscordNode } from "@/features/executions/components/discord/node";
 import { SlackNode } from "@/features/executions/components/slack/node";
-import { NodeType } from "@/types/node";
+import { NodeType } from "@/generated/prisma";
 
 export const nodeComponents = {
   [NodeType.INITIAL]: InitialNode,

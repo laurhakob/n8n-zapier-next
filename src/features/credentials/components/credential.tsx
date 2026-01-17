@@ -36,7 +36,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { CredentialType } from "@/types/node";
+import { CredentialType } from "@/generated/prisma";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),

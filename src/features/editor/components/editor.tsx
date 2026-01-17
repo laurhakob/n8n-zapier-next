@@ -25,7 +25,7 @@ import { AddNodeButton } from './add-node-button';
 import { useSetAtom } from 'jotai';
 import { editorAtom } from '../store/atoms';
 import { ExecuteWorkflowButton } from './execute-workflow-button';
-import { NodeType } from '@/types/node';
+import { NodeType } from '@/generated/prisma';
 
 export const EditorLoading = () => {
   return <LoadingView message="Loading editor..." />;
