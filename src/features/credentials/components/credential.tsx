@@ -1,6 +1,5 @@
 "use client";
 
-import { CredentialType } from "@/generated/prisma";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { 
@@ -37,6 +36,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { CredentialType } from "@/types/node";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
