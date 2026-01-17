@@ -72,12 +72,12 @@ export const geminiExecutor: NodeExecutor<GeminiData> = async ({
   const userPrompt = Handlebars.compile(data.userPrompt)(context);
 
   const credential = await step.run("get-credential", () => {
-    // return prisma.credential.findUnique({
-    //   where: {
-    //     id: data.credentialId,
-    //     userId,
-    //   },
-    // });
+    return prisma.credential.findUnique({
+      where: {
+        id: data.credentialId,
+        userId,
+      },
+    });
   });
 
   if (!credential) {

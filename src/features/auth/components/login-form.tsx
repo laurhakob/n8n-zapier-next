@@ -24,7 +24,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
- import { authClient } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 
 const loginSchema = z.object({
   email: z.email("Please enter a valid email address"),
@@ -44,34 +44,33 @@ export function LoginForm() {
     },
   });
 
-//   const signInGithub = async () => {
-//     await authClient.signIn.social({
-//       provider: "github",
-//     }, {
-//       onSuccess: () => {
-//         router.push("/");
-//       },
-//       onError: () => {
-//         toast.error("Something went wrong");
-//       },
-//     });
-//   };
+  const signInGithub = async () => {
+    await authClient.signIn.social({
+      provider: "github",
+    }, {
+      onSuccess: () => {
+        router.push("/");
+      },
+      onError: () => {
+        toast.error("Something went wrong");
+      },
+    });
+  };
 
-//   const signInGoogle = async () => {
-//     await authClient.signIn.social({
-//       provider: "google",
-//     }, {
-//       onSuccess: () => {
-//         router.push("/");
-//       },
-//       onError: () => {
-//         toast.error("Something went wrong");
-//       },
-//     });
-//   };
+  const signInGoogle = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    }, {
+      onSuccess: () => {
+        router.push("/");
+      },
+      onError: () => {
+        toast.error("Something went wrong");
+      },
+    });
+  };
 
   const onSubmit = async (values: LoginFormValues) => {
-    
     await authClient.signIn.email({
       email: values.email,
       password: values.password,
@@ -105,7 +104,7 @@ export function LoginForm() {
               <div className="grid gap-6">
                 <div className="flex flex-col gap-4">
                   <Button
-                    // onClick={signInGithub}
+                    onClick={signInGithub}
                     variant="outline"
                     className="w-full"
                     type="button"
@@ -115,7 +114,7 @@ export function LoginForm() {
                     Continue with GitHub
                   </Button>
                   <Button
-                    // onClick={signInGoogle}
+                    onClick={signInGoogle}
                     variant="outline"
                     className="w-full"
                     type="button"

@@ -366,4 +366,3 @@ export const EntityItem = ({
     </Link>
   )
 };
- 

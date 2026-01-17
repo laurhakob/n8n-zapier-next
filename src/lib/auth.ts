@@ -22,10 +22,6 @@ export const auth = betterAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     },
   },
-   trustedOrigins: [
-    "http://localhost:3000",
-    "https://*.ngrok-free.dev", // Allow all ngrok domains
-  ],
   plugins: [
     polar({
       client: polarClient,
@@ -34,15 +30,15 @@ export const auth = betterAuth({
         checkout({
           products: [
             {
-              productId: "c0f16824-6463-48c0-a3dc-3ae765c4af90",
+              productId: "f81be8a8-45e1-4e45-a1e9-b9d3fd79f814",
               slug: "pro",
-            },
+            }
           ],
           successUrl: process.env.POLAR_SUCCESS_URL,
           authenticatedUsersOnly: true,
         }),
         portal(),
       ],
-    }),
-  ],
+    })
+  ]
 });

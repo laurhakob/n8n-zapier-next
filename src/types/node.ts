@@ -19,3 +19,9 @@ export enum CredentialType {
   ANTHROPIC = "ANTHROPIC",
   GEMINI = "GEMINI",
 }
+
+export enum ExecutionStatus {
+  RUNNING = "RUNNING",
+  SUCCESS = "SUCCESS",
+  FAILED = "FAILED",
+}

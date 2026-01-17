@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { useState, useCallback, useMemo } from 'react';
 import { 
@@ -16,16 +16,16 @@ import {
   MiniMap,
   Panel,
 } from '@xyflow/react';
- import { ErrorView, LoadingView } from "@/components/entity-components";
- import { useSuspenseWorkflow } from "@/features/workflows/hooks/use-workflows";
+import { ErrorView, LoadingView } from "@/components/entity-components";
+import { useSuspenseWorkflow } from "@/features/workflows/hooks/use-workflows";
 
- import '@xyflow/react/dist/style.css';
- import { nodeComponents } from '@/config/node-components';
- import { AddNodeButton } from './add-node-button';
- import { useSetAtom } from 'jotai';
- import { editorAtom } from '../store/atoms';
+import '@xyflow/react/dist/style.css';
+import { nodeComponents } from '@/config/node-components';
+import { AddNodeButton } from './add-node-button';
+import { useSetAtom } from 'jotai';
+import { editorAtom } from '../store/atoms';
+import { ExecuteWorkflowButton } from './execute-workflow-button';
 import { NodeType } from '@/types/node';
- import { ExecuteWorkflowButton } from './execute-workflow-button';
 
 export const EditorLoading = () => {
   return <LoadingView message="Loading editor..." />;
@@ -35,12 +35,12 @@ export const EditorError = () => {
   return <ErrorView message="Error loading editor" />;
 };
 
- export const Editor = ({ workflowId }: { workflowId: string }) => {
+export const Editor = ({ workflowId }: { workflowId: string }) => {
   const { 
     data: workflow
   } = useSuspenseWorkflow(workflowId);
 
-   const setEditor = useSetAtom(editorAtom);
+  const setEditor = useSetAtom(editorAtom);
 
   const [nodes, setNodes] = useState<Node[]>(workflow.nodes);
   const [edges, setEdges] = useState<Edge[]>(workflow.edges);
@@ -62,9 +62,6 @@ export const EditorError = () => {
     return nodes.some((node) => node.type === NodeType.MANUAL_TRIGGER);
   }, [nodes]);
 
-
-
-
   return (
     <div className='size-full'>
       <ReactFlow
@@ -73,8 +70,8 @@ export const EditorError = () => {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
-         nodeTypes={nodeComponents}
-         onInit={setEditor}
+        nodeTypes={nodeComponents}
+        onInit={setEditor}
         fitView
         snapGrid={[10, 10]}
         snapToGrid
@@ -96,4 +93,4 @@ export const EditorError = () => {
       </ReactFlow>
     </div>
   );
- };
+};
